@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="youtube.css">
+</head>
+<body>
+	<script src="ytembed.js"></script>
+	
+
+	<script>
+		
+
+		function search() {
+			var keyword = document.getElementById('search').value;
+			console.log(keyword);
+
+			ytEmbed.init({'block':'ytThumbs','key':'AIzaSyCxmDDUh2hLC8i9DfpCcFK59wUG8Qub-34','q':''+keyword+'','type':'search','results':5,'meta':true,'player':'embed','layout':'full'});
+		}
+	</script>
+
+	<input type="text" name="search" id="search"><button onclick="search()">Search</button>
+	<div id="ytThumbs"></div>
+	<!-- <div class="ytPlayer"> -->
+		<!-- <iframe id="youtubeDivResultsPlayer" width="640" height="390" frameborder="0" src="https://www.youtube.com/embed/KAJqL-60a08?autoplay=1&amp;modestbranding=1&amp;origin=https://www.yvoschaap.com"></iframe> -->
+	<!-- </div> -->
+	<ul class="ytlist"></ul>
+
+</body>
+</html>

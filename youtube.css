@@ -1,0 +1,128 @@
+/*.ytlist{
+	list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.ytlist h3 {
+    margin: 0;
+    line-height: 1.55em;
+}*/
+
+h1, h3 {
+    margin: 30px 0 10px 0;  
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #d8d8d8;
+    margin: 20px 0;
+}
+
+input {
+    margin: 5px 0;
+}
+/* needed for the thumbs to show correctly */
+.ytPlayer{
+	margin: auto;
+	text-align: center;
+}
+.ytlist {
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+}
+
+/* float fix */
+.ytlist:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden
+}
+
+.ytlist li{
+	display: inline;
+	float: left;
+	margin: 5px; /* some space */
+}
+
+.ytlist table {
+	width: 100%;
+}
+
+.ytlist td{
+	padding: 5px; /* some space */
+	vertical-align: top;
+}
+
+.ytlist h3{
+	margin: 0;
+	line-height: 1.55em;
+}
+
+
+.ytlist a {
+	padding:0px;
+}
+/* hd */
+.clip span {
+	position: relative;
+	width: 288px;
+	overflow: hidden;
+}
+.clip img{
+	width: 288px;
+	display: block;
+
+}
+
+/* thumbs */
+.small .clip span {
+	position: relative;
+	width: 100px;
+	overflow: hidden;
+}
+.small .clip img{
+	width: 100px;
+	display: block;
+
+}
+
+/* for paging UL */
+#ytPage{
+	list-style: none inside;
+	margin: 0;
+	padding: 0;
+	height: 20px;
+}
+
+#ytPage .ytNext{
+	float: right; /* aligns to the right of ul */
+}
+
+#ytPage .ytPrev{
+	display: inline-block; /* blocks keeps our ul height */
+}
+
+/* generator css */
+input, select, textarea{
+	padding: 5px;
+	font-size: 1.1em;	
+}
+textarea {
+    padding: 10px;
+}
+
+#blog {
+   flex-direction: column;
+}
