@@ -11,13 +11,18 @@ export default class FlickrElement extends PureComponent {
     const { title, description, src, datetime } = this.props.data;
 
     return (
-      <Card style={{ width: "18rem" }}>
+      <Card className="element flickr">
         <Card.Img variant="top" src={src} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Subtitle>{description}</Card.Subtitle>
         </Card.Body>
-        <Card.Footer className="small p-1 pl-3 bg-info text-white"><b>Flickr</b> on {moment(datetime).format("YYYY-MM-DD")}</Card.Footer>
+        <Card.Footer
+          className="small p-1 pl-3 bg-info text-white"
+          title={moment(datetime).format("YYYY-MM-DD HH:mm")}
+        >
+          <b>Flickr</b> on {moment(datetime).fromNow()}
+        </Card.Footer>
       </Card>
     );
   }

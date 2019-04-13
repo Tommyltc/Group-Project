@@ -12,19 +12,17 @@ export default class YoutubeElement extends PureComponent {
 
     return (
       <>
-        <style jsx global>{`
-          .bg-youtube {
-            background-color: rgb(255, 0, 0);
-          }
-        `}</style>
-        <Card style={{ width: "18rem" }}>
+        <Card className="element youtube">
           <Card.Img variant="top" src={photo} />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Subtitle>{description}</Card.Subtitle>
           </Card.Body>
-          <Card.Footer className="small p-1 pl-3 bg-youtube text-white">
-            <b>Youtube</b> on {moment(datetime).format("YYYY-MM-DD")}
+          <Card.Footer
+            className="small p-1 pl-3 bg-youtube text-white"
+            title={moment(datetime).format("YYYY-MM-DD HH:mm")}
+          >
+            <b>Youtube</b> on {moment(datetime).fromNow()}
           </Card.Footer>
         </Card>
       </>

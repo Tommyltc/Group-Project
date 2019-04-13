@@ -62,30 +62,52 @@ export default class Result extends PureComponent {
     data = this.reformArray(data);
 
     return (
-      <Masonry className="mt-1">
-        {data.map((element, i) => {
-          let element_dom;
-          switch (element.platform) {
-            case "flickrData":
-              element_dom = <FlickrElement data={element} key={i} />;
-              break;
-            case "instagramData":
-              element_dom = <InstagramElement data={element} key={i} />;
-              break;
-            case "pinterestData":
-              element_dom = <PinterestElement data={element} key={i} />;
-              break;
-            case "youtubeData":
-              element_dom = <YoutubeElement data={element} key={i} />;
-              break;
+      <>
+        <style jsx global>{`
+          .bg-youtube {
+            background-color: rgb(255, 0, 0);
           }
-          return (
-            <div className="m-2" key={i}>
-              {element_dom}
-            </div>
-          );
-        })}
-      </Masonry>
+          .bg-pinterest{
+            background-color: rgb(189, 8, 28);
+          }
+          .element {
+            width: 18rem;
+            word-break: break-all;
+          }
+          .element img{
+            max-width: 100%;
+          }
+          @media (max-width: 607px) {
+            .element {
+              width: 100%;
+            }
+          }
+        `}</style>
+        <Masonry className="mt-1">
+          {data.map((element, i) => {
+            let element_dom;
+            switch (element.platform) {
+              case "flickrData":
+                element_dom = <FlickrElement data={element} key={i} />;
+                break;
+              case "instagramData":
+                element_dom = <InstagramElement data={element} key={i} />;
+                break;
+              case "pinterestData":
+                element_dom = <PinterestElement data={element} key={i} />;
+                break;
+              case "youtubeData":
+                element_dom = <YoutubeElement data={element} key={i} />;
+                break;
+            }
+            return (
+              <div className="m-2" key={i}>
+                {element_dom}
+              </div>
+            );
+          })}
+        </Masonry>
+      </>
     );
   }
 }

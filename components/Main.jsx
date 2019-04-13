@@ -39,6 +39,23 @@ export default class Main extends PureComponent {
     return (
       <div>
         <style jsx global>{`
+          .navbar-brand {
+            white-space: normal;
+            font-weight: bold;
+          }
+          @media (max-width: 739px) {
+            .navbar {
+              display: block;
+            }
+            .navbar-brand {
+              margin-bottom: 0.4rem;
+            }
+          }
+          @media (max-width: 484px) {
+            .navbar-brand {
+              font-size: 0.92rem;
+            }
+          }
           .loading {
             position: absolute;
             top: 50%;

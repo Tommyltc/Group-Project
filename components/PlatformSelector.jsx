@@ -34,7 +34,6 @@ export default class PlatformSelector extends PureComponent {
           .platformSelector {
             background-color: #FFFFBB;
             opacity: 0.9;
-            font-size
           }
           .bg-youtube {
             background-color: rgb(255, 0, 0) !important;
@@ -47,6 +46,12 @@ export default class PlatformSelector extends PureComponent {
             cursor: pointer;
             font-size: 0.9rem;
             text-transform: capitalize;
+          }
+          @media (max-width: 399px) {
+            label {
+              font-size: 0.7rem;
+              padding-top: 0.3rem;
+            }
           }
           label[for="checkbox-instagram"]{
             color: #343a40;
