@@ -30,7 +30,7 @@ export default async function getData(keyword) {
   ytEmbed.jsonCallback = (json) => {
     let array = [];
     for (var i = 0; i < json.length; i++) {
-      array[i] = ytEmbed.getCard(json[i])
+      array[i] = object(json[i]);
     }
     return array;
   }
