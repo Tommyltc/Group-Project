@@ -14,7 +14,7 @@ export default async function getData(keyword) {
     response = await axios.get(url, { querys });
   }catch(e){
     console.log("Instagram API error!");
-    console.log(e);
+    console.log(e.response.status, e.response.data);
     return [];
   }
   
