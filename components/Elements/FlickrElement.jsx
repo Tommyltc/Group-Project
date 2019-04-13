@@ -8,14 +8,13 @@ export default class FlickrElement extends PureComponent {
   }
 
   render() {
-    const { title, description, photo, datetime } = this.props.data;
+    const { title, src, datetime } = this.props.data;
 
     return (
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={photo} />
+        <Card.Img variant="top" src={src} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
-          <Card.Subtitle>{description}</Card.Subtitle>
         </Card.Body>
         <Card.Footer className="small p-1 pl-3 bg-info text-white"><b>Flickr</b> on {moment(datetime).format("YYYY-MM-DD")}</Card.Footer>
       </Card>

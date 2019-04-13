@@ -1,28 +1,50 @@
-import randomInt from "../utils/randomInt";
-import padLeft from "../utils/padLeft";
+import axios from "axios";
 
 export default async function getData(keyword) {
-  // const response = await axios.get('https://call-your-api-like-that/thank-you-very-much');
-  await new Promise(resolve => setTimeout(resolve, 2000)); //Just for demo, sleep(2000)
+  // APP config
+  const key = "d5bdef52f659cb9e8f4a43fe668b3765";
+  const secret = "f4247377f9653ed7";
 
-  let object = () => {
-    return {
-      title: "Test Flickr title #" + randomInt(1, 9999),
-      description:
-        "Test Flickr description! Do you want to find something about " +
-        keyword +
-        "?",
-      photo:
-        "https://s.yimg.com/ny/api/res/1.2/4OMiPyFzUesBF3dtTLSqTg--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9NTMwO2g9Mzk2/http://media.zenfs.com/zh-Hant-HK/homerun/heawork.tumblr.com/4b481e2526229821f2e759e860b87d9a",
-      datetime: "2019-"  + padLeft(randomInt(1, 12), 2) + "-" + padLeft(randomInt(1, 28), 2) + " 00:00:00"
-    };
+  // API setting
+  const url = "https://api.flickr.com/services/rest/";
+
+  // API paramters
+  let params = {};
+  params = {
+    method: "flickr.photos.search", // https://www.flickr.com/services/api/flickr.photos.search.html
+    api_key: key, // Your API application key
+    tags: keyword, // A comma-delimited list of tags. Photos with one or more of the tags listed will be returned.
+    //   text: keyword, // A free text search. Photos who's title, description or tags contain the text will be returned.
+    format: "json",
+    nojsoncallback: 1,
+    per_page: 10 // chunk size to fetch
   };
 
-  let array = [];
+  const response = await axios.get(url, { params });
 
-  for (let i = 0; i < 10; i++) {
-    array[i] = object();
-  }
+  // handle success
+  //console.log(response.data);
 
-  return array;
+  const { data } = response;
+
+  let result = [];
+
+  data.photos.photo.map((gp, i) => {
+    const farmId = gp.farm;
+    const serverId = gp.server;
+    const id = gp.id;
+    const secret = gp.secret;
+
+    //console.log(farmId + ", " + serverId + ", " + id + ", " + secret);
+
+    //  https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+
+    result.push({
+      src: `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}.jpg`,
+      title: gp.title,
+      datetime: "2019-04-13 00:00:00",  //hard-code first, to-do
+    });
+  });
+
+  return result;
 }
