@@ -1,6 +1,7 @@
 import { PureComponent } from "react";
 
 import Masonry from "react-masonry-component";
+import moment from "moment";
 
 import FlickrElement from "../components/Elements/FlickrElement";
 import InstagramElement from "../components/Elements/InstagramElement";
@@ -21,6 +22,13 @@ export default class Result extends PureComponent {
         }
       }
     }
+
+    //Format "datetime"
+    result.map((element, i) => {
+      element.datetime = typeof element.datetime === "undefined" || !element.datetime ? new Date() : element.datetime;
+      element.datetime = moment(element.datetime).format("YYYY-MM-DD HH:mm:ss");
+    });
+
 
     //Sort by date DESC
     result.sort((a, b) => {
