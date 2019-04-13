@@ -12,7 +12,7 @@ export default async function getData(keyword) {
   const response = await axios.get(url, { querys });
 
   const data = response.data.graphql.hashtag.edge_hashtag_to_media;
-  console.log(data.edges);
+  // console.log(data.edges);
 
   let result = [];
 
