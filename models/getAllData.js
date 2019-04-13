@@ -1,20 +1,20 @@
-import getDataFlicker from "../models/flicker";
+import getDataFlickr from "../models/flickr";
 import getDataInstagram from "../models/instagram";
 import getDataPinterest from "../models/pinterest";
 import getDataYoutube from "../models/youtube";
 
 export default async function getAllData(keyword) {
   const [
-    flickerData,
+    flickrData,
     instagramData,
     pinterestData,
     youtubeData
   ] = await Promise.all([
-    getDataFlicker(keyword),
+    getDataFlickr(keyword),
     getDataInstagram(keyword),
     getDataPinterest(keyword),
     getDataYoutube(keyword)
   ]);
 
-  return { flickerData, instagramData, pinterestData, youtubeData };
+  return { flickrData, instagramData, pinterestData, youtubeData };
 }

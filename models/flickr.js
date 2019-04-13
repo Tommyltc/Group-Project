@@ -7,9 +7,9 @@ export default async function getData(keyword) {
 
   let object = () => {
     return {
-      title: "Test Flicker title #" + randomInt(1, 9999),
+      title: "Test Flickr title #" + randomInt(1, 9999),
       description:
-        "Test Flicker description! Do you want to find something about " +
+        "Test Flickr description! Do you want to find something about " +
         keyword +
         "?",
       photo:

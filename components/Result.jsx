@@ -2,7 +2,7 @@ import { PureComponent } from "react";
 
 import Masonry from "react-masonry-component";
 
-import FlickerElement from "../components/Elements/FlickerElement";
+import FlickrElement from "../components/Elements/FlickrElement";
 import InstagramElement from "../components/Elements/InstagramElement";
 import PinterestElement from "../components/Elements/PinterestElement";
 import YoutubeElement from "../components/Elements/YoutubeElement";
@@ -46,8 +46,8 @@ export default class Result extends PureComponent {
         {data.map((element, i) => {
           let element_dom;
           switch (element.platform) {
-            case "flickerData":
-              element_dom = <FlickerElement data={element} key={i} />;
+            case "flickrData":
+              element_dom = <FlickrElement data={element} key={i} />;
               break;
             case "instagramData":
               element_dom = <InstagramElement data={element} key={i} />;
