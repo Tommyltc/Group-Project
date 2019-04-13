@@ -62,7 +62,7 @@ export default class Result extends PureComponent {
     data = this.reformArray(data);
 
     return (
-      <Masonry className="mt-3">
+      <Masonry className="mt-1">
         {data.map((element, i) => {
           let element_dom;
           switch (element.platform) {

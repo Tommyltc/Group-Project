@@ -5,6 +5,7 @@ import ReactLoading from "react-loading";
 import getAllData from "../models/getAllData";
 
 import Searchbar from "../components/Searchbar";
+import PlatformSelector from "../components/PlatformSelector";
 import Result from "../components/Result";
 
 export default class Main extends PureComponent {
@@ -13,20 +14,25 @@ export default class Main extends PureComponent {
 
     this.state = {
       data: null,
-      loading: false
+      loading: false,
+      keyword: "",
     };
   }
 
-  async handleSearch(keyword) {
+  async handleSearch(keyword, platforms = []) {
     window.history.pushState({}, "", "/" + keyword);
 
     this.setState({ loading: true });
 
     this.setState({
-      data: await getAllData(keyword)
+      data: await getAllData(keyword, platforms)
     });
 
-    this.setState({ loading: false });
+    this.setState({ loading: false, keyword });
+  }
+
+  async handleSelectPlatform(platforms) {
+    return await this.handleSearch(this.state.keyword, platforms);
   }
 
   render() {
@@ -43,12 +49,15 @@ export default class Main extends PureComponent {
             margin: 0 auto;
           }
         `}</style>
+        <div className="sticky-top">
         <Navbar bg="dark" variant="dark" sticky="top">
           <Navbar.Brand className="mr-auto">
             COMP 3121 Awesome social media search page
           </Navbar.Brand>
-          <Searchbar handleSearch={this.handleSearch.bind(this)} default_keyword={this.props.default_keyword} />
+          <Searchbar handleSearch={this.handleSearch.bind(this)} default_keyword={this.props.default_keyword} loading={this.state.loading} />
         </Navbar>
+        <PlatformSelector handleSelectPlatform={this.handleSelectPlatform.bind(this)} />
+        </div>
         <Result data={this.state.data || this.props.data} />
         {this.state.loading ? (
           <div className="loading">
