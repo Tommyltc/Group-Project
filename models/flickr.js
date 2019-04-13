@@ -25,7 +25,7 @@ export default async function getData(keyword) {
     response = await axios.get(url, { params });
   }catch(e){
     console.log("Flickr API error!");
-    console.log(e.response.status, e.response.data);
+    console.log(e);
     return [];
   }
 

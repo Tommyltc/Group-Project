@@ -29,7 +29,7 @@ export default async function getData(keyword) {
     );
   }catch(e){
     console.log("Pinterest API error!");
-    console.log(e.response.status, e.response.data);
+    console.log(e);
     return [];
   }
 
