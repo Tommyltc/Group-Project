@@ -66,8 +66,16 @@ function reander(imgSrc, imgClass, imgTitle) {
 }
 
 function search() {
-  var keyword = document.getElementById("search").value;
+  let keyword = $("#search").val();
+  keyword = $.trim(keyword);
   console.log(keyword);
+
+  $("#search").val(keyword);
+
+  if (keyword === "") {
+    alert("Please fill the keyword on quick search bar!");
+    return false;
+  }
 
   main(keyword);
 }
