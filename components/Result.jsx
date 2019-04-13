@@ -25,8 +25,20 @@ export default class Result extends PureComponent {
 
     //Format "datetime"
     result.map((element, i) => {
+      //console.log(element.datetime, element.platform);
+      
+      //If no datetime provide, use current time
       element.datetime = typeof element.datetime === "undefined" || !element.datetime ? new Date() : element.datetime;
+
+      //Handle UNIX timestamp
+      if(Number.isNaN(element.datetime) === false && element.datetime <= 5000000000){
+        element.datetime = moment.unix(element.datetime);
+      }
+      
+      //Convert to string (YYYY-MM-DD HH:mm:ss)
       element.datetime = moment(element.datetime).format("YYYY-MM-DD HH:mm:ss");
+
+      //console.log(element.datetime, element.platform);
     });
 
 
