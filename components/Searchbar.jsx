@@ -6,7 +6,7 @@ export default class Searchbar extends PureComponent {
     super(props);
 
     this.state = {
-      keyword: ""
+      keyword: this.props.default_keyword || ""
     };
   }
 
@@ -24,6 +24,7 @@ export default class Searchbar extends PureComponent {
             placeholder="What you want to search?"
             aria-label="What you want to search?"
             aria-describedby="basic-addon2"
+            defaultValue={this.props.default_keyword}
             onChange={e => {
               this.handleInputText(e.target.value);
             }}

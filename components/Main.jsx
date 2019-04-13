@@ -47,7 +47,7 @@ export default class Main extends PureComponent {
           <Navbar.Brand className="mr-auto">
             COMP 3121 Awesome social media search page
           </Navbar.Brand>
-          <Searchbar handleSearch={this.handleSearch.bind(this)} />
+          <Searchbar handleSearch={this.handleSearch.bind(this)} default_keyword={this.props.default_keyword} />
         </Navbar>
         <Result data={this.state.data || this.props.data} />
         {this.state.loading ? (
