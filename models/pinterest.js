@@ -1,8 +1,5 @@
 import axios from "axios";
 
-import randomInt from "../utils/randomInt";
-import padLeft from "../utils/padLeft";
-
 export default async function getData(keyword) {
   let response;
   try{
