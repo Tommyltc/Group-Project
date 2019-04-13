@@ -12,8 +12,8 @@ export default class YoutubeElement extends PureComponent {
 
     return (
       <>
-        <style type="text/css">{`
-          .bg-youtube{
+        <style jsx>{`
+          .bg-youtube {
             background-color: rgb(255, 0, 0);
           }
         `}</style>

@@ -26,20 +26,20 @@ export default class Main extends PureComponent {
       data: await getAllData(keyword)
     });
 
-    this.setState({loading: false});
+    this.setState({ loading: false });
   }
 
   render() {
     return (
       <div>
-        <style>{`
-          .loading{
+        <style jsx>{`
+          .loading {
             position: absolute;
             top: 50%;
             width: 100%;
             z-index: 9999;
           }
-          .loading > div{
+          .loading > div {
             margin: 0 auto;
           }
         `}</style>

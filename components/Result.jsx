@@ -59,7 +59,11 @@ export default class Result extends PureComponent {
               element_dom = <YoutubeElement data={element} key={i} />;
               break;
           }
-          return <div className="m-2">{element_dom}</div>;
+          return (
+            <div className="m-2" key={i}>
+              {element_dom}
+            </div>
+          );
         })}
       </Masonry>
     );
