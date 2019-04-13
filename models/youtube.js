@@ -1,14 +1,16 @@
 import randomInt from "../utils/randomInt";
 import padLeft from "../utils/padLeft";
-import ytembed;
+//import ytembed;
 
 export default async function getData(keyword) {
   // const response = await axios.get('https://call-your-api-like-that/thank-you-very-much');
   await new Promise(resolve => setTimeout(resolve, 500)); //Just for demo, sleep(500)
 
+  return [];
+
   const object = (obj) => {
     return {
-      title: obj.title;//"Test Youtube title #" + randomInt(1, 9999),
+      title: obj.title,//"Test Youtube title #" + randomInt(1, 9999),
       description:
         obj.description +
         keyword +
