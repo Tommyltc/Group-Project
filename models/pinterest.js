@@ -7,7 +7,7 @@ export default async function getData(keyword) {
   let response;
   try{
     response = await axios.get(
-      "https://www.pinterest.com/resource/SearchResource/get/",
+      "/api/pinterest/resource/SearchResource/get/",
       {
         headers: {
           "X-Requested-With": "XMLHttpRequest",
