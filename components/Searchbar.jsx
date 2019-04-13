@@ -37,11 +37,14 @@ export default class Searchbar extends PureComponent {
           <InputGroup.Append>
             <Button
               variant="primary"
+              disabled={this.props.loading}
               onClick={e => {
-                handleSearch(this.state.keyword);
+                if(!this.props.loading){
+                  handleSearch(this.state.keyword);
+                }
               }}
             >
-              Search
+              {this.props.loading ? "Searching…" : "Search"}
             </Button>
           </InputGroup.Append>
         </InputGroup>
