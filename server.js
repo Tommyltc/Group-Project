@@ -13,6 +13,15 @@ app.prepare().then(() => {
         next();
     });
 
+    server.get('/favicon.ico', (req, res) => (
+        res.status(200).sendFile('favicon.ico', {
+            root: './static/',
+            headers: {
+                'Content-Type': 'image/x-icon',
+            },
+        })
+    ));
+
     server.get('/google832ce009b43ea227.html', (req, res) => (
         res.status(200).sendFile('google832ce009b43ea227.html', {
             root: './static/',
