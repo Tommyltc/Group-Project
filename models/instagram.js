@@ -9,7 +9,15 @@ export default async function getData(keyword) {
 
   const url = `https://www.instagram.com/explore/tags/${keyword}/?__a=1`;
 
-  const response = await axios.get(url, { querys });
+  let response;
+  try{
+    response = await axios.get(url, { querys });
+  }catch(e){
+    console.log("Instagram API error!");
+    console.log(e);
+    return [];
+  }
+  
 
   const data = response.data.graphql.hashtag.edge_hashtag_to_media;
   // console.log(data.edges);

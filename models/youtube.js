@@ -9,7 +9,14 @@ export default async function getData(keyword) {
   params.maxResults = 10;
   params.type = "video";
 
-  const response = await axios.get(ROOT_URL, { params });
+  let response;
+  try{
+    response = await axios.get(ROOT_URL, { params });
+  }catch(e){
+    console.log("Youtube API error!");
+    console.log(e);
+    return [];
+  }
 
   const { items } = response.data;
 

@@ -20,7 +20,14 @@ export default async function getData(keyword) {
     per_page: 10 // chunk size to fetch
   };
 
-  const response = await axios.get(url, { params });
+  let response;
+  try{
+    response = await axios.get(url, { params });
+  }catch(e){
+    console.log("Flickr API error!");
+    console.log(e);
+    return [];
+  }
 
   // handle success
   //console.log(response.data);
