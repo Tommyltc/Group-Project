@@ -1,5 +1,3 @@
-import searchYouTube from "youtube-search-api-with-axios";
-
 import axios from "axios";
 export default async function getData(keyword) {
   const API_KEY = "AIzaSyCxmDDUh2hLC8i9DfpCcFK59wUG8Qub-34";
