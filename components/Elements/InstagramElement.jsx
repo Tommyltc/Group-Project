@@ -8,11 +8,11 @@ export default class InstagramElement extends PureComponent {
   }
 
   render() {
-    const { title, description, photo, datetime } = this.props.data;
+    const { title, description, src, datetime } = this.props.data;
 
     return (
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={photo} />
+        <Card.Img variant="top" src={src} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Subtitle>{description}</Card.Subtitle>
