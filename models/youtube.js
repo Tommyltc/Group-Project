@@ -1,28 +1,37 @@
 import randomInt from "../utils/randomInt";
 import padLeft from "../utils/padLeft";
+import ytembed;
 
 export default async function getData(keyword) {
   // const response = await axios.get('https://call-your-api-like-that/thank-you-very-much');
   await new Promise(resolve => setTimeout(resolve, 500)); //Just for demo, sleep(500)
 
-  const object = () => {
+  const object = (obj) => {
     return {
-      title: "Test Youtube title #" + randomInt(1, 9999),
+      title: obj.title;//"Test Youtube title #" + randomInt(1, 9999),
       description:
-        "Test Youtube description! Do you want to find something about " +
+        obj.description +
         keyword +
         "?",
       photo:
-        "https://s.yimg.com/ny/api/res/1.2/4OMiPyFzUesBF3dtTLSqTg--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9NTMwO2g9Mzk2/http://media.zenfs.com/zh-Hant-HK/homerun/heawork.tumblr.com/4b481e2526229821f2e759e860b87d9a",
-      datetime: "2019-" + padLeft(randomInt(1, 12), 2) + "-" + padLeft(randomInt(1, 28), 2) + " 00:00:00"
+        obj.thumbnail.url,
+      datetime: new Date(object.publishedAt).toString().split("GMT",1)
     };
   };
 
-  let array = [];
+  // let array = [];
 
-  for (let i = 0; i < 10; i++) {
-    array[i] = object();
+  // for (let i = 0; i < 10; i++) {
+  //   array[i] = object();
+  // }
+
+  // return array;
+  ytEmbed.init({'block':'ytThumbs','key':'AIzaSyCxmDDUh2hLC8i9DfpCcFK59wUG8Qub-34','q':''+keyword+'','type':'search','results':5,'meta':true,'player':'embed','layout':'full'});
+  ytEmbed.jsonCallback = (json) => {
+    let array = [];
+    for (var i = 0; i < json.length; i++) {
+      array[i] = ytEmbed.getCard(json[i])
+    }
+    return array;
   }
-
-  return array;
 }
