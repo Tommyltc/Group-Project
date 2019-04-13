@@ -32,7 +32,7 @@ export default class Main extends PureComponent {
   render() {
     return (
       <div>
-        <style jsx>{`
+        <style jsx global>{`
           .loading {
             position: absolute;
             top: 50%;
