@@ -4,6 +4,8 @@ import getDataPinterest from "../models/pinterest";
 import getDataYoutube from "../models/youtube";
 
 export default async function getAllData(keyword) {
+  keyword = keyword === "" ? "polyu" : keyword;
+
   const [
     flickrData,
     instagramData,
