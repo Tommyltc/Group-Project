@@ -6,7 +6,9 @@ const proxy = require("http-proxy-middleware");
 const host = process.env.HOST || "0.0.0.0";
 const port = process.env.PORT || 8080;
 
-const app = next({ dev: true });
+console.log(process.env.NODE_ENV);
+const isDev = process.env.NODE_ENV !== "production";
+const app = next({ dev:  isDev });
 
 app.prepare().then(() => {
     let server = express();

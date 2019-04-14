@@ -1,9 +1,10 @@
 {
   "name": "create-next-example-app",
   "scripts": {
-    "dev": "node server.js",
-    "build": "next build",
-    "start": "node server.js"
+    "dev": "cross-env NODE_ENV=development node server.js",
+    "prod": "npm run build && npm run start",
+    "build": "cross-env NODE_ENV=production next build",
+    "start": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -20,5 +21,7 @@
     "react-loading": "^2.0.3",
     "react-masonry-component": "^6.2.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
 }
