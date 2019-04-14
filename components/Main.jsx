@@ -99,7 +99,7 @@ export default class Main extends PureComponent {
             handleCheckboxChange={this.handleCheckboxChange.bind(this)}
           />
         </div>
-        <Result data={this.state.data || this.props.data} />
+        <Result data={this.state.data || this.props.data} keyword={this.state.keyword} />
         {this.state.loading ? (
           <div className="loading">
             <ReactLoading type="spin" color="#222" />

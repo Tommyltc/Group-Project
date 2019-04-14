@@ -13,6 +13,10 @@ export default class InstagramElement extends PureComponent {
 
   render() {
     const { title, description, src, datetime } = this.props.data;
+    const { keyword } = this.props;
+
+    const alt =
+      title || "Image" + (keyword ? " about " + keyword : "") + " on Instagram";
 
     let modalClose = () => this.setState({ modalShow: false });
 
@@ -24,6 +28,8 @@ export default class InstagramElement extends PureComponent {
             src={src}
             onClick={() => this.setState({ modalShow: true })}
             style={{ cursor: "pointer" }}
+            alt={alt}
+            title={alt}
           />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
@@ -40,6 +46,9 @@ export default class InstagramElement extends PureComponent {
         <InstagramModal
           show={this.state.modalShow}
           onHide={modalClose}
+          title={alt}
+          description={description}
+          alt={alt}
           imgSrc={src}
         />
       </Fragment>

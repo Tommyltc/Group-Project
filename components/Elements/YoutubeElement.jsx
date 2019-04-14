@@ -13,8 +13,12 @@ export default class YoutubeElement extends PureComponent {
 
   render() {
     const { id, title, description, photo, datetime } = this.props.data;
+    const { keyword } = this.props;
 
-    var link = "https://www.youtube.com/watch?v=" + id;
+    const link = "https://www.youtube.com/watch?v=" + id;
+    const alt =
+      title ||
+      "Video thumbnail" + (keyword ? " about " + keyword : "") + " on Youtube";
 
     let modalClose = () => this.setState({ modalShow: false });
 
@@ -26,6 +30,8 @@ export default class YoutubeElement extends PureComponent {
             src={photo}
             onClick={() => this.setState({ modalShow: true })}
             style={{ cursor: "pointer" }}
+            alt={alt}
+            title={alt}
           />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
@@ -44,6 +50,9 @@ export default class YoutubeElement extends PureComponent {
         <YoutubeModal
           show={this.state.modalShow}
           onHide={modalClose}
+          title={alt}
+          description={description}
+          alt={alt}
           videoId={id}
         />
       </Fragment>

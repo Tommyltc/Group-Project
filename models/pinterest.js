@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export default async function getData(keyword) {
+export default async function getData(keyword, host = "") {
   let response;
   try{
     response = await axios.get(
-      "/api/pinterest/resource/SearchResource/get/",
+      host + "/api/pinterest/resource/SearchResource/get/",
       {
         headers: {
           "X-Requested-With": "XMLHttpRequest",
@@ -29,7 +29,7 @@ export default async function getData(keyword) {
     );
   }catch(e){
     console.log("Pinterest API error!");
-    console.log(e);
+    //console.log(e);
     return [];
   }
 

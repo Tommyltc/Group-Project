@@ -7,7 +7,7 @@ export default class YoutubeModal extends PureComponent {
   }
 
   render() {
-    const { show, onHide, videoId } = this.props;
+    const { show, onHide, title, description, alt, videoId } = this.props;
 
     return (
       <div>
@@ -32,20 +32,21 @@ export default class YoutubeModal extends PureComponent {
           centered
           dialogClassName="YoutubeModal"
         >
-          <Modal.Header closeButton />
+          <Modal.Header closeButton>
+            <Modal.Title>{title}</Modal.Title>
+          </Modal.Header>
           <Modal.Body>
-            <Container fluid>
-              <Row>
-                <Col style={{textAlign: "center"}}>
-                  <iframe
-                    width="420"
-                    height="315"
-                    src={`https://www.youtube.com/embed/${videoId}`}
-                    frameborder="0"
-                  />
-                </Col>
-              </Row>
-            </Container>
+            {description ? <p>{description}</p> : null}
+            <div style={{ textAlign: "center" }}>
+              <iframe
+                width="420"
+                height="315"
+                src={`https://www.youtube.com/embed/${videoId}`}
+                frameborder="0"
+                alt={alt}
+                title={alt}
+              />
+            </div>
           </Modal.Body>
         </Modal>
       </div>

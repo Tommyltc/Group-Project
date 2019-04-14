@@ -12,7 +12,17 @@ export default class FlickrElement extends PureComponent {
   }
 
   render() {
-    const { title, description, src, datetime, oSrc } = this.props.data;
+    const {
+      title,
+      description,
+      src,
+      datetime,
+      oSrc
+    } = this.props.data;
+    const { keyword } = this.props;
+
+    const alt =
+      title || "Image" + (keyword ? " about " + keyword : "") + " on Flickr";
 
     let modalClose = () => this.setState({ modalShow: false });
 
@@ -24,6 +34,8 @@ export default class FlickrElement extends PureComponent {
             src={src}
             onClick={() => this.setState({ modalShow: true })}
             style={{ cursor: "pointer" }}
+            alt={alt}
+            title={alt}
           />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
@@ -40,6 +52,9 @@ export default class FlickrElement extends PureComponent {
         <FlickrModal
           show={this.state.modalShow}
           onHide={modalClose}
+          title={alt}
+          description={description}
+          alt={alt}
           imgSrc={oSrc}
         />
       </Fragment>

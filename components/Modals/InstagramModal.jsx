@@ -7,7 +7,7 @@ export default class InstagramModal extends PureComponent {
   }
 
   render() {
-    const { show, onHide, imgSrc } = this.props;
+    const { show, onHide, title, description, alt, imgSrc } = this.props;
 
     return (
       <div>
@@ -32,15 +32,14 @@ export default class InstagramModal extends PureComponent {
           centered
           dialogClassName="InstagramModal"
         >
-          <Modal.Header closeButton />
+          <Modal.Header closeButton>
+            <Modal.Title>{title}</Modal.Title>
+          </Modal.Header>
           <Modal.Body>
-            <Container fluid>
-              <Row>
-                <Col>
-                  <Image src={imgSrc} alt="" className="img-center" />
-                </Col>
-              </Row>
-            </Container>
+            {description ? <p>{description}</p> : null}
+            <div>
+              <Image src={imgSrc} alt={alt} title={alt} className="img-center" />
+            </div>
           </Modal.Body>
         </Modal>
       </div>
