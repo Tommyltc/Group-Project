@@ -73,6 +73,7 @@ export default class PlatformSelector extends PureComponent {
             label={platform}
             type="checkbox"
             id={`checkbox-${platform}`}
+            key={platform}
             defaultChecked={this.state.selected_platform.indexOf(platform) !== -1}
             onChange={e => {
               this.handleCheckboxChange(platform, e.target.checked);
