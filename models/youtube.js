@@ -33,8 +33,8 @@ export default async function getData(keyword) {
       description: video.snippet.description,
       datetime: video.snippet.publishedAt
     };
-    console.log("youtube")
-    console.log(video);
+    //console.log("youtube")
+    //console.log(video);
     results.push(row);
   });
 
