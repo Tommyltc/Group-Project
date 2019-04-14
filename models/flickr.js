@@ -43,6 +43,9 @@ export default async function getData(keyword) {
     const secret = gp.secret;
 
     const info = await getPhotoInfo(id);
+    const oSecret = info.originalsecret;
+    const oExt = info.originalformat;
+    // console.log(info)
 
     //console.log(farmId + ", " + serverId + ", " + id + ", " + secret);
 
@@ -53,7 +56,8 @@ export default async function getData(keyword) {
       src: `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}.jpg`,
       title: info.title,
       description: info.description,
-      datetime: info.datetime
+      datetime: info.datetime,
+      oSrc: `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${oSecret}_o.${oExt}`
     });
   });
   // console.log(result);
@@ -78,7 +82,9 @@ const getPhotoInfo = async id => {
   return {
     title: photo.title._content,
     description: photo.description._content,
-    datetime: photo.dates.posted
+    datetime: photo.dates.posted,
+    originalsecret: photo.originalsecret,
+    originalformat: photo.originalformat,
   };
 };
 

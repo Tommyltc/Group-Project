@@ -12,7 +12,7 @@ export default class FlickrElement extends PureComponent {
   }
 
   render() {
-    const { title, description, src, datetime } = this.props.data;
+    const { title, description, src, datetime, oSrc } = this.props.data;
 
     let modalClose = () => this.setState({ modalShow: false });
 
@@ -39,7 +39,7 @@ export default class FlickrElement extends PureComponent {
         <FlickrModal
           show={this.state.modalShow}
           onHide={modalClose}
-          imgSrc={src}
+          imgSrc={oSrc}
         />
       </Fragment>
     );
