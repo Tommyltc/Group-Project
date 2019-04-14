@@ -36,6 +36,9 @@ const Page = props => {
   let og_images = [];
 
   props.data.map((element, i) => {
+    if(og_images.length >= 3){
+      return false;
+    }
     if (typeof element.platform === "undefined" || !element.platform) {
       return true;
     }
