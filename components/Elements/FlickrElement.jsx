@@ -23,6 +23,7 @@ export default class FlickrElement extends PureComponent {
             variant="top"
             src={src}
             onClick={() => this.setState({ modalShow: true })}
+            style={{ cursor: "pointer" }}
           />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
