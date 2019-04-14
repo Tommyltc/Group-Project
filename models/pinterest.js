@@ -44,8 +44,8 @@ export default async function getData(keyword, host = "") {
 
   response.data.resource_response.data.map((record, i) => {
     
-    console.log(record);
-    console.log(record.id);
+    //console.log(record);
+    //console.log(record.id);
 
     try{
       let obj;
