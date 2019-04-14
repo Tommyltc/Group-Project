@@ -25,15 +25,6 @@ app.prepare().then(() => {
         })
     ));
 
-    server.get('/google832ce009b43ea227.html', (req, res) => (
-        res.status(200).sendFile('google832ce009b43ea227.html', {
-            root: './static/',
-            headers: {
-                'Content-Type': 'text/plain;charset=UTF-8',
-            },
-        })
-    ));
-
     //Proxy server for Pinterest API (solve browser CORS policy issue)
     server.use(
         "/api/pinterest",
