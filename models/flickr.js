@@ -17,7 +17,7 @@ export default async function getData(keyword) {
     text: keyword, // A free text search. Photos who's title, description or tags contain the text will be returned.
     format: "json",
     nojsoncallback: 1,
-    per_page: 10, // chunk size to fetch
+    // per_page: 25, // chunk size to fetch
     sort: "relevance",
     safe_search: 1
   };
@@ -47,7 +47,7 @@ export default async function getData(keyword) {
     const info = await getPhotoInfo(id);
     const oSecret = info.originalsecret;
     const oExt = info.originalformat;
-    
+
     //console.log(gp);
     //console.log(info);
 
@@ -69,7 +69,10 @@ export default async function getData(keyword) {
       description: info.description,
       datetime: info.datetime,
       oSrc,
-      page_url: gp.owner && gp.id ? `https://www.flickr.com/photos/${gp.owner}/${gp.id}` : ""
+      page_url:
+        gp.owner && gp.id
+          ? `https://www.flickr.com/photos/${gp.owner}/${gp.id}`
+          : ""
     });
   });
   // console.log(result);

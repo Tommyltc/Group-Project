@@ -1,4 +1,5 @@
 import axios from "axios";
+
 export default async function getData(keyword) {
   const API_KEY = "AIzaSyA8OmKcw2DMNkJicyCJ0vqvf90xgeH52zE";
   const ROOT_URL = "https://www.googleapis.com/youtube/v3/search";
@@ -6,13 +7,14 @@ export default async function getData(keyword) {
   let params = {};
   params.key = API_KEY;
   params.part = "snippet";
-  params.maxResults = 10;
+  params.q = keyword;
+  params.maxResults = 25;
   params.type = "video";
-
+  console.log(params)
   let response;
-  try{
+  try {
     response = await axios.get(ROOT_URL, { params });
-  }catch(e){
+  } catch (e) {
     console.log("Youtube API error!");
     console.log(e);
     return [];
@@ -27,8 +29,8 @@ export default async function getData(keyword) {
     }&key=AIzaSyA8OmKcw2DMNkJicyCJ0vqvf90xgeH52zE&part=snippet`;
     // console.log(src);
     const row = {
-      id:video.id.videoId,
-      photo:video.snippet.thumbnails.high.url,
+      id: video.id.videoId,
+      photo: video.snippet.thumbnails.high.url,
       title: video.snippet.title,
       description: video.snippet.description,
       datetime: video.snippet.publishedAt
