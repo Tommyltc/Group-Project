@@ -16,6 +16,17 @@ app.prepare().then(() => {
         next();
     });
 
+    //Handle robots.txt
+    server.get('/robots.txt', (req, res) => (
+        res.status(200).sendFile('robots.txt', {
+            root: './static/',
+            headers: {
+                'Content-Type': 'text/plain; charset=utf-8',
+            },
+        })
+    ));
+
+    //Handle favicon.ico
     server.get('/favicon.ico', (req, res) => (
         res.status(200).sendFile('favicon.ico', {
             root: './static/',
