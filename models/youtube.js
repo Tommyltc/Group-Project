@@ -1,6 +1,6 @@
 import axios from "axios";
 export default async function getData(keyword) {
-  const API_KEY = "AIzaSyCxmDDUh2hLC8i9DfpCcFK59wUG8Qub-34";
+  const API_KEY = "AIzaSyA8OmKcw2DMNkJicyCJ0vqvf90xgeH52zE";
   const ROOT_URL = "https://www.googleapis.com/youtube/v3/search";
 
   let params = {};
@@ -22,16 +22,19 @@ export default async function getData(keyword) {
 
   let results = [];
   items.map(video => {
-    const src = `https://www.youtube.com/embed/${
+    const src = `https://www.googleapis.com/youtube/v3/search?id=${
       video.id.videoId
-    }?autoplay=0&modestbranding=1`;
+    }&key=AIzaSyA8OmKcw2DMNkJicyCJ0vqvf90xgeH52zE&part=snippet`;
     // console.log(src);
     const row = {
-      src,
+      id:video.id.videoId,
+      photo:video.snippet.thumbnails.high.url,
       title: video.snippet.title,
       description: video.snippet.description,
       datetime: video.snippet.publishedAt
     };
+    console.log("youtube")
+    console.log(video);
     results.push(row);
   });
 

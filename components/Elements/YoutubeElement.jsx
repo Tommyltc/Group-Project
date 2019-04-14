@@ -8,12 +8,14 @@ export default class YoutubeElement extends PureComponent {
   }
 
   render() {
-    const { title, description, photo, datetime } = this.props.data;
-
+    const { id, title, description, photo, datetime } = this.props.data;
+    var link = "https://www.youtube.com/watch?v="+id;
+    console.log("youtube render");
+    console.log(link);
     return (
       <>
         <Card className="element youtube">
-          <Card.Img variant="top" src={photo} />
+          <a target="_blank" href={"https://www.youtube.com/watch?v="+id}><Card.Img variant="top" src={photo} /></a>
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Subtitle>{description}</Card.Subtitle>
