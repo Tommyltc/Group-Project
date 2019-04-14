@@ -82,6 +82,9 @@ export default class Result extends PureComponent {
               width: 100%;
             }
           }
+          .card-footer a {
+            color: #FFF;
+          }
         `}</style>
         <Masonry className="mt-1">
           {data.map((element, i) => {
