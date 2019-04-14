@@ -17,7 +17,8 @@ export default class FlickrElement extends PureComponent {
       description,
       src,
       datetime,
-      oSrc
+      oSrc,
+      page_url
     } = this.props.data;
     const { keyword } = this.props;
 
@@ -45,7 +46,7 @@ export default class FlickrElement extends PureComponent {
             className="small p-1 pl-3 bg-info text-white"
             title={moment(datetime).format("YYYY-MM-DD HH:mm")}
           >
-            <b>Flickr</b> on {moment(datetime).fromNow()}
+            <a href={page_url} target="_blank"><b>Flickr</b> on {moment(datetime).fromNow()}</a>
           </Card.Footer>
         </Card>
 

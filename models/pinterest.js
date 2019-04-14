@@ -43,6 +43,10 @@ export default async function getData(keyword, host = "") {
   }
 
   response.data.resource_response.data.map((record, i) => {
+    
+    console.log(record);
+    console.log(record.id);
+
     try{
       let obj;
       if(typeof record.rich_summary !== "undefined" && record.rich_summary !== null){
@@ -51,6 +55,7 @@ export default async function getData(keyword, host = "") {
           description: record.rich_summary.display_description,
           photo: record.images["736x"].url,
           datetime: record.created_at,
+          page_url: record.id ? `https://www.pinterest.com/pin/${record.id}` : ""
         }
       }else{
         obj = {
@@ -58,6 +63,7 @@ export default async function getData(keyword, host = "") {
           description: "",
           photo: record.images["736x"].url,
           datetime: record.created_at,
+          page_url: record.id ? `https://www.pinterest.com/pin/${record.id}` : ""
         }
       }
 

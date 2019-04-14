@@ -12,7 +12,7 @@ export default class PinterestElement extends PureComponent {
   }
 
   render() {
-    const { title, description, photo, datetime } = this.props.data;
+    const { title, description, photo, datetime, page_url } = this.props.data;
     const { keyword } = this.props;
 
     const alt =
@@ -39,7 +39,7 @@ export default class PinterestElement extends PureComponent {
             className="small p-1 pl-3 bg-pinterest text-white"
             title={moment(datetime).format("YYYY-MM-DD HH:mm")}
           >
-            <b>Pinterest</b> on {moment(datetime).fromNow()}
+            <a href={page_url} target="_blank"><b>Pinterest</b> on {moment(datetime).fromNow()}</a>
           </Card.Footer>
         </Card>
 

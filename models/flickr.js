@@ -47,7 +47,9 @@ export default async function getData(keyword) {
     const info = await getPhotoInfo(id);
     const oSecret = info.originalsecret;
     const oExt = info.originalformat;
-    // console.log(info)
+    
+    //console.log(gp);
+    //console.log(info);
 
     //console.log(farmId + ", " + serverId + ", " + id + ", " + secret);
 
@@ -66,7 +68,8 @@ export default async function getData(keyword) {
       title: info.title,
       description: info.description,
       datetime: info.datetime,
-      oSrc
+      oSrc,
+      page_url: gp.owner && gp.id ? `https://www.flickr.com/photos/${gp.owner}/${gp.id}` : ""
     });
   });
   // console.log(result);
