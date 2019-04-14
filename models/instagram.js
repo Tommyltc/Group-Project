@@ -28,8 +28,10 @@ export default async function getData(keyword) {
     const item = enode["node"];
 
     let description = "";
+    let shortcode = "";
     if (item["edge_media_to_caption"]["edges"].length > 0) {
       description = item["edge_media_to_caption"]["edges"][0]["node"]["text"];
+      shortcode = item["edge_media_to_caption"]["edges"][0]["node"]["shortcode"];
     }
 
     const node = {
@@ -38,6 +40,7 @@ export default async function getData(keyword) {
       id: item["id"],
       datetime: item["taken_at_timestamp"],
       src: item["thumbnail_src"],
+      url: `https://www.instagram.com/p/${shortcode}`,
     };
     result.push(node);
   });
