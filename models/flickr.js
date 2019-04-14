@@ -21,9 +21,9 @@ export default async function getData(keyword) {
   };
 
   let response;
-  try{
+  try {
     response = await axios.get(url, { params });
-  }catch(e){
+  } catch (e) {
     console.log("Flickr API error!");
     console.log(e);
     return [];
@@ -51,13 +51,20 @@ export default async function getData(keyword) {
 
     //  https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 
+    let src = `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}.jpg`;
+    let oSrc = src;
+
+    if (oSecret !== undefined && oExt !== undefined) {
+      oSrc = `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${oSecret}_o.${oExt}`;
+    }
+
     result.push({
       _photo_id: id,
-      src: `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}.jpg`,
+      src,
       title: info.title,
       description: info.description,
       datetime: info.datetime,
-      oSrc: `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${oSecret}_o.${oExt}`
+      oSrc
     });
   });
   // console.log(result);
@@ -84,7 +91,6 @@ const getPhotoInfo = async id => {
     description: photo.description._content,
     datetime: photo.dates.posted,
     originalsecret: photo.originalsecret,
-    originalformat: photo.originalformat,
+    originalformat: photo.originalformat
   };
 };
-
