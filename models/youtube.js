@@ -10,7 +10,7 @@ export default async function getData(keyword) {
   params.q = keyword;
   params.maxResults = 25;
   params.type = "video";
-  console.log(params)
+
   let response;
   try {
     response = await axios.get(ROOT_URL, { params });
