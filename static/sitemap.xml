@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<sitemap>
-  <loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/static/sitemap1.xml</loc>
-</sitemap>
-<sitemap>
-  <loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/static/sitemap2.xml</loc>
-</sitemap>
-<sitemap>
-  <loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/static/sitemap3.xml</loc>
-</sitemap>
-<sitemap>
-  <loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/static/sitemap4.xml</loc>
-</sitemap>
-<sitemap>
-  <loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/static/sitemap5.xml</loc>
-</sitemap>
-<sitemap>
-  <loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/static/sitemap6.xml</loc>
-</sitemap>
-<sitemap>
-  <loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/static/sitemap7.xml</loc>
-</sitemap>
-<sitemap>
-  <loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/static/sitemap8.xml</loc>
-</sitemap>
-</sitemapindex>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com</loc>
+	<changefreq>always</changefreq>
+</url>
+<url>
+	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/polyu</loc>
+	<changefreq>always</changefreq>
+</url>
+<url>
+	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/itdog</loc>
+	<changefreq>always</changefreq>
+</url>
+<url>
+	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/hkig</loc>
+	<changefreq>always</changefreq>
+</url>
+</urlset>
