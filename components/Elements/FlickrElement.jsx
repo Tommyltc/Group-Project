@@ -2,7 +2,7 @@ import { PureComponent, Fragment } from "react";
 import { Card } from "react-bootstrap";
 import moment from "moment";
 
-import FlickrModal from "./FlickrModal";
+import FlickrModal from "../Modals/FlickrModal";
 
 export default class FlickrElement extends PureComponent {
   constructor(props) {
