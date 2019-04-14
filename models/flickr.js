@@ -13,11 +13,13 @@ export default async function getData(keyword) {
   params = {
     method: "flickr.photos.search", // https://www.flickr.com/services/api/flickr.photos.search.html
     api_key: key, // Your API application key
-    tags: keyword, // A comma-delimited list of tags. Photos with one or more of the tags listed will be returned.
-    //   text: keyword, // A free text search. Photos who's title, description or tags contain the text will be returned.
+    // tags: keyword, // A comma-delimited list of tags. Photos with one or more of the tags listed will be returned.
+    text: keyword, // A free text search. Photos who's title, description or tags contain the text will be returned.
     format: "json",
     nojsoncallback: 1,
-    per_page: 10 // chunk size to fetch
+    per_page: 10, // chunk size to fetch
+    sort: "relevance",
+    safe_search: 1
   };
 
   let response;
