@@ -16,8 +16,7 @@ const Page = props => {
       props.default_keyword +
       " on Instagram, Youtube, Flickr, Pinterest."
     : "A social media mashup that uses content from Instagram, Youtube, Flickr, Pinterest to displayed in a single page.";
-  const url = props.url;
-
+  const url = props.full_url;
   let SEO = {
     title,
     description,
@@ -103,9 +102,8 @@ Page.getInitialProps = async ({ req, query }) => {
 
   const keyword = query.keyword || "";
   const host = "http://" + req.headers.host;
-  const url = host + req.url;
   return {
-    url,
+    full_url: host + req.url,
     data: await getAllData(keyword, [], host),
     default_keyword: keyword
   };
