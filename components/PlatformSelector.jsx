@@ -7,11 +7,31 @@ export default class PlatformSelector extends PureComponent {
     const { selected_platform, handleCheckboxChange } = this.props;
 
     return (
-      <div className="p-2 platformSelector">
+      <div className="p-2 subheader">
         <style jsx global>{`
-          .platformSelector {
+          .subheader {
+            display: flex;
             background-color: #FFFFBB;
             opacity: 0.9;
+          }
+          .platformSelector{
+            display: inline-block;
+          }
+          .hotKeyword{
+            display: inline-block;
+            font-size: 0.9rem
+          }
+          @media (max-width: 770px) {
+            .subheader {
+              display: block;
+            }
+            .platformSelector {
+              display: block;
+            }
+            .hotKeyword {
+              display: block;
+              margin-top: 0.2rem;
+            }
           }
           .bg-youtube {
             background-color: rgb(255, 0, 0) !important;
@@ -44,6 +64,7 @@ export default class PlatformSelector extends PureComponent {
             color: rgb(189, 8, 28);
           }
         `}</style>
+        <div className="platformSelector mr-auto">
         {["instagram", "youtube", "flickr", "pinterest"].map(platform => (
           <Form.Check
             custom
@@ -58,6 +79,17 @@ export default class PlatformSelector extends PureComponent {
             }}
           />
         ))}
+        </div>
+        <div className="hotKeyword">
+          <b>Most people searching:</b>{` `}
+          <a href="/polyu">polyu</a>
+          {` | `}
+          <a href="/hongkong">hongkong</a>
+          {` | `}
+          <a href="/itdog">itdog</a>
+          {` | `}
+          <a href="/hkig">hkig</a>
+        </div>
       </div>
     );
   }
