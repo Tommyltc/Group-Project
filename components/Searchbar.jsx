@@ -2,21 +2,7 @@ import { PureComponent } from "react";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 export default class Searchbar extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      keyword: this.props.default_keyword || ""
-    };
-  }
-
-  handleInputText(keyword) {
-    this.setState({ keyword });
-  }
-
   render() {
-    const { handleSearch } = this.props;
-
     return (
       <div>
         <InputGroup>
@@ -26,11 +12,11 @@ export default class Searchbar extends PureComponent {
             aria-describedby="basic-addon2"
             defaultValue={this.props.default_keyword}
             onChange={e => {
-              this.handleInputText(e.target.value);
+              this.props.handleInputText(e.target.value);
             }}
             onKeyPress={e => {
               if (e.which == 13) {
-                handleSearch(this.state.keyword);
+                this.props.handleSearch();
               }
             }}
           />
@@ -39,8 +25,8 @@ export default class Searchbar extends PureComponent {
               variant="primary"
               disabled={this.props.loading}
               onClick={e => {
-                if(!this.props.loading){
-                  handleSearch(this.state.keyword);
+                if (!this.props.loading) {
+                  this.props.handleSearch();
                 }
               }}
             >

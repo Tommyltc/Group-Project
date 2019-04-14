@@ -15,24 +15,40 @@ export default class Main extends PureComponent {
     this.state = {
       data: null,
       loading: false,
-      keyword: "",
+      keyword: this.props.default_keyword || "",
+      selected_platform: ["instagram", "youtube", "flickr", "pinterest"]
     };
   }
 
-  async handleSearch(keyword, platforms = []) {
-    window.history.pushState({}, "", "/" + keyword);
+  async handleSearch() {
+    window.history.pushState({}, "", "/" + this.state.keyword);
 
     this.setState({ loading: true });
 
     this.setState({
-      data: await getAllData(keyword, platforms)
+      data: await getAllData(this.state.keyword, this.state.selected_platform)
     });
 
-    this.setState({ loading: false, keyword });
+    this.setState({ loading: false, keyword: this.state.keyword });
   }
 
-  async handleSelectPlatform(platforms) {
-    return await this.handleSearch(this.state.keyword, platforms);
+  handleInputText(keyword) {
+    this.setState({ keyword });
+  }
+
+  handleCheckboxChange(platform, enable) {
+    let selected_platform = this.state.selected_platform;
+
+    if (enable && selected_platform.indexOf(platform) === -1) {
+      selected_platform.push(platform);
+    }
+
+    if (!enable) {
+      selected_platform.splice(selected_platform.indexOf(platform), 1);
+    }
+
+    this.setState({ selected_platform });
+    this.handleSearch();
   }
 
   render() {
@@ -67,13 +83,21 @@ export default class Main extends PureComponent {
           }
         `}</style>
         <div className="sticky-top">
-        <Navbar bg="dark" variant="dark" sticky="top">
-          <Navbar.Brand className="mr-auto">
-            COMP 3121 Awesome social media search page
-          </Navbar.Brand>
-          <Searchbar handleSearch={this.handleSearch.bind(this)} default_keyword={this.props.default_keyword} loading={this.state.loading} />
-        </Navbar>
-        <PlatformSelector handleSelectPlatform={this.handleSelectPlatform.bind(this)} />
+          <Navbar bg="dark" variant="dark" sticky="top">
+            <Navbar.Brand className="mr-auto">
+              COMP 3121 Awesome social media search page
+            </Navbar.Brand>
+            <Searchbar
+              default_keyword={this.props.default_keyword}
+              handleInputText={this.handleInputText.bind(this)}
+              handleSearch={this.handleSearch.bind(this)}
+              loading={this.state.loading}
+            />
+          </Navbar>
+          <PlatformSelector
+            selected_platform={this.state.selected_platform}
+            handleCheckboxChange={this.handleCheckboxChange.bind(this)}
+          />
         </div>
         <Result data={this.state.data || this.props.data} />
         {this.state.loading ? (

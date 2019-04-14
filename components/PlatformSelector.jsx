@@ -2,31 +2,9 @@ import { PureComponent } from "react";
 import { Form } from "react-bootstrap";
 
 export default class PlatformSelector extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selected_platform: ["instagram", "youtube", "flickr", "pinterest"]
-    };
-  }
-
-  handleCheckboxChange(platform, enable) {
-    let selected_platform = this.state.selected_platform;
-
-    if(enable && selected_platform.indexOf(platform) === -1){
-      selected_platform.push(platform);
-    }
-
-    if(!enable){
-      selected_platform.splice(selected_platform.indexOf(platform), 1);
-    }
-
-    this.setState({ selected_platform });
-    this.props.handleSelectPlatform(this.state.selected_platform);
-  }
 
   render() {
-    const { handleSearch } = this.props;
+    const { selected_platform, handleCheckboxChange } = this.props;
 
     return (
       <div className="p-2 platformSelector">
@@ -74,9 +52,9 @@ export default class PlatformSelector extends PureComponent {
             type="checkbox"
             id={`checkbox-${platform}`}
             key={platform}
-            defaultChecked={this.state.selected_platform.indexOf(platform) !== -1}
+            defaultChecked={selected_platform.indexOf(platform) !== -1}
             onChange={e => {
-              this.handleCheckboxChange(platform, e.target.checked);
+              handleCheckboxChange(platform, e.target.checked);
             }}
           />
         ))}
