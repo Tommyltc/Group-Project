@@ -5,7 +5,7 @@ const Head = () => (
   <NextHead>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-site-verification" content="qTwEsBRoQwbsiNTuoPLJTuZPVQITRXEgGZaMQZFJQ-8" />
+    <meta name="google-site-verification" content="64-uo_zdaqTdBt6CSsWjuNFQk8FR3Ryfg7Aj4OX-3Q8" />
 
     <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
     <link rel="apple-touch-icon" href="/static/touch-icon.png" />
