@@ -19,14 +19,14 @@ const Head = () => (
       crossOrigin="anonymous"
     />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138182427-2" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138218691-1" />
     <script dangerouslySetInnerHTML={{__html:
       `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'UA-138182427-2');
+        gtag('config', 'UA-138218691-1');
       `
     }} />
   </NextHead>
