@@ -10,9 +10,9 @@ If you are interested to use our service, just [click here](http://comp3121-grou
 ## What information I can find on this webpage?
 You can search anything what you want to see by using our keyword search function.
 Here is some example:
-[polyu](http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/polyu)
-[hongkong](http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/hongkong)
-[itdog](http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/itdog)
-[hkig](http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/hkig)
+1. [polyu](http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/polyu)
+2. [hongkong](http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/hongkong)
+3. [itdog](http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/itdog)
+4. [hkig](http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/hkig)
 
 Enjoy and have fun~

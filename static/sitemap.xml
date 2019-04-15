@@ -9,6 +9,9 @@
 	<changefreq>always</changefreq>
 </url>
 <url>
+	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/aboutus</loc>
+</url>
+<url>
 	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/polyu</loc>
 	<changefreq>always</changefreq>
 </url>

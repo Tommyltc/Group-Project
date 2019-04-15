@@ -50,6 +50,7 @@ app.prepare().then(() => {
     server.get("*", (req, res) => {
         //URL Routing
         const routes = nextRoutes();
+        routes.add("aboutus", "/aboutus", "aboutus");
         routes.add("index", "/:keyword?", "index");
         const { route, query } = routes.match(req.url);
 

@@ -59,6 +59,9 @@ export default class Main extends PureComponent {
             white-space: normal;
             font-weight: bold;
           }
+          .navbar-brand a {
+            color: #FFF;
+          }
           @media (max-width: 739px) {
             .navbar {
               display: block;
@@ -85,7 +88,7 @@ export default class Main extends PureComponent {
         <div className="sticky-top">
           <Navbar bg="dark" variant="dark" sticky="top">
             <Navbar.Brand className="mr-auto">
-              COMP 3121 Awesome social media search page
+              <a href="/aboutus">COMP 3121 Awesome social media search page</a>
             </Navbar.Brand>
             <Searchbar
               default_keyword={this.props.default_keyword}
