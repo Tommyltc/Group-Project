@@ -48,6 +48,9 @@ export default class Main extends PureComponent {
           .aboutus {
             padding: 15px;
           }
+          .aboutus img {
+            max-width: 100%;
+          }
           .navbar-brand {
             white-space: normal;
             font-weight: bold;
