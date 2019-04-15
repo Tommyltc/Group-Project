@@ -105,7 +105,7 @@ Page.getInitialProps = async ({ req, query }) => {
 
   const keyword = query.keyword || "";
   //const host = "http://" + req.headers.host;
-  const host = "http://" + "comp3121.opp.com.hk/";
+  const host = "http://" + "comp3121.opp.com.hk";
   return {
     full_url: host + req.url,
     data: await getAllData(keyword, [], host),

@@ -36,7 +36,7 @@ const Page = props => {
 
 Page.getInitialProps = async ({ req, query }) => {
   //const host = "http://" + req.headers.host;
-  const host = "http://" + "comp3121.opp.com.hk/";
+  const host = "http://" + "comp3121.opp.com.hk";
   return {
     full_url: host + req.url
   };
