@@ -1,3 +1,3 @@
-Sitemap: http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/static/sitemap.xml
+Sitemap: http://comp3121.opp.com.hk/static/sitemap.xml
 User-agent: *
 Allow: /

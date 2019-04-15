@@ -5,22 +5,22 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com</loc>
+	<loc>http://comp3121.opp.com.hk</loc>
 	<changefreq>always</changefreq>
 </url>
 <url>
-	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/aboutus</loc>
+	<loc>http://comp3121.opp.com.hk/aboutus</loc>
 </url>
 <url>
-	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/polyu</loc>
+	<loc>http://comp3121.opp.com.hk/polyu</loc>
 	<changefreq>always</changefreq>
 </url>
 <url>
-	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/itdog</loc>
+	<loc>http://comp3121.opp.com.hk/itdog</loc>
 	<changefreq>always</changefreq>
 </url>
 <url>
-	<loc>http://comp3121-group-project-comp3121-group-project.1d35.starter-us-east-1.openshiftapps.com/hkig</loc>
+	<loc>http://comp3121.opp.com.hk/hkig</loc>
 	<changefreq>always</changefreq>
 </url>
 </urlset>
