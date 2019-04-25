@@ -28,10 +28,10 @@ export default class Main extends PureComponent {
   render() {
     const markdown = `## What is COMP 3121 Awesome social media search page?
     A social media mashup that uses content from Instagram, Youtube, Flickr, Pinterest to displayed in a single page.
-    
+
     ## What is Social Media Mashup?
     A mashup is a web page or web application that uses content from more than one source to create a single new service displayed in a single graphical interface.
-    
+
     ## What information I can find on this webpage?
     You can search anything what you want to see by using our keyword search function.
     Here is some example:
@@ -39,7 +39,7 @@ export default class Main extends PureComponent {
     2. [hongkong](/hongkong)
     3. [itdog](/itdog)
     4. [hkig](/hkig)
-    
+
     Enjoy and have fun~`;
 
     return (
@@ -75,7 +75,7 @@ export default class Main extends PureComponent {
         <div className="sticky-top">
           <Navbar bg="dark" variant="dark" sticky="top">
             <Navbar.Brand className="mr-auto">
-              <a href="/">COMP 3121 Awesome social media search page</a>
+              <a href="/"><h1>COMP 3121 Awesome social media search page</h1></a>
             </Navbar.Brand>
             <Searchbar
               handleInputText={this.handleInputText.bind(this)}

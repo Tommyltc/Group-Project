@@ -88,7 +88,7 @@ export default class Main extends PureComponent {
         <div className="sticky-top">
           <Navbar bg="dark" variant="dark" sticky="top">
             <Navbar.Brand className="mr-auto">
-              <a href="/aboutus">COMP 3121 Awesome social media search page</a>
+              <a href="/aboutus"><h1>COMP 3121 Awesome social media search page</h1></a>
             </Navbar.Brand>
             <Searchbar
               default_keyword={this.props.default_keyword}
