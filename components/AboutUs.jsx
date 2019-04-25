@@ -58,6 +58,12 @@ export default class Main extends PureComponent {
           .navbar-brand a {
             color: #fff;
           }
+          h1 {
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+            margin: inherit;
+          }
           @media (max-width: 739px) {
             .navbar {
               display: block;
